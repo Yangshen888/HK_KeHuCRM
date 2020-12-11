@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$APPLICATION_CONFIG_DIR$/consoles/db" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_HaikanCRM.-763151840.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="HaiKan3" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="HaiKan3.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="HaiKan3.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Utils" t="Include">
+          <e p="DesEncrypt.cs" t="Include" />
+          <e p="DingDingHelper.cs" t="Include" />
+          <e p="DtToSql.cs" t="Include" />
+          <e p="EWM.cs" t="Include" />
+          <e p="ExcelTools.cs" t="Include" />
+          <e p="IDCardValidation.cs" t="Include" />
+          <e p="RandomHelper.cs" t="Include" />
+          <e p="RSA_PEM.cs" t="Include" />
+          <e p="SHA256WithRSA.cs" t="Include" />
+          <e p="ToHttp.cs" t="Include" />
+          <e p="YunSendMsg.cs" t="Include" />
+          <e p="ZIP.cs" t="Include" />
+        </e>
+      </e>
+      <e p="HaikanCRM.Api" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="Auth" t="Include">
+          <e p="AppAuthenticationSettings.cs" t="Include" />
+          <e p="JwtBearerAuthenticationExtension.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configurations" t="Include">
+          <e p="AppSettings.cs" t="Include" />
+          <e p="MappingProfile.cs" t="Include" />
+          <e p="MdDesEncrypt.cs" t="Include" />
+          <e p="VehicleCreateViewModel.cs" t="Include" />
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="AccountController.cs" t="Include" />
+          <e p="Api" t="Include">
+            <e p="V1" t="Include">
+              <e p="AppClient" t="Include">
+                <e p="AppClientController.cs" t="Include" />
+              </e>
+              <e p="Base" t="Include">
+                <e p="BaseInfoController.cs" t="Include" />
+              </e>
+              <e p="business" t="Include">
+                <e p="BusinessController.cs" t="Include" />
+                <e p="BusinessDocumentsController.cs" t="Include" />
+              </e>
+              <e p="CallLog" t="Include">
+                <e p="CallLogController.cs" t="Include" />
+              </e>
+              <e p="Client" t="Include">
+                <e p="MyClientsController.cs" t="Include" />
+              </e>
+              <e p="communList" t="Include">
+                <e p="communListController.cs" t="Include" />
+              </e>
+              <e p="Contact" t="Include">
+                <e p="ContactController.cs" t="Include" />
+              </e>
+              <e p="DingDing" t="Include">
+                <e p="DingDingController.cs" t="Include" />
+              </e>
+              <e p="Message" t="Include">
+                <e p="MessageController.cs" t="Include" />
+              </e>
+              <e p="personal" t="Include">
+                <e p="personalController.cs" t="Include" />
+              </e>
+              <e p="Rbac" t="Include">
+                <e p="IconController.cs" t="Include" />
+                <e p="MenuController.cs" t="Include" />
+                <e p="PermissionController.cs" t="Include" />
+                <e p="RoleController.cs" t="Include" />
+                <e p="UserController.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="ErrorController.cs" t="Include" />
+          <e p="HaikanController.cs" t="Include" />
+          <e p="OauthController.cs" t="Include" />
+          <e p="TestController.cs" t="Include" />
+        </e>
+        <e p="Culture" t="Include">
+          <e p="ContextCultureMiddleware.cs" t="Include" />
+          <e p="RequestCultureMiddlewareExtensions.cs" t="Include" />
+        </e>
+        <e p="Entities" t="Include">
+          <e p="Business.cs" t="Include" />
+          <e p="BusinessDocuments.cs" t="Include" />
+          <e p="BusinessOpportunity.cs" t="Include" />
+          <e p="BusinessOpportunityFiles.cs" t="Include" />
+          <e p="BusinessOpportunityFollow.cs" t="Include" />
+          <e p="CallLog.cs" t="Include" />
+          <e p="Client.cs" t="Include" />
+          <e p="Company.cs" t="Include" />
+          <e p="ContactAddress.cs" t="Include" />
+          <e p="ContactDetails.cs" t="Include" />
+          <e p="ContactExchange.cs" t="Include" />
+          <e p="ContactManager.cs" t="Include" />
+          <e p="ContactPerson.cs" t="Include" />
+          <e p="CustomerManagement.cs" t="Include" />
+          <e p="CustomerStatus.cs" t="Include" />
+          <e p="Department.cs" t="Include" />
+          <e p="Enums" t="Include">
+            <e p="CommonEnum.cs" t="Include" />
+          </e>
+          <e p="haikanCRMContext.cs" t="Include" />
+          <e p="Industry.cs" t="Include" />
+          <e p="Message.cs" t="Include" />
+          <e p="SystemIcon.cs" t="Include" />
+          <e p="SystemLog.cs" t="Include" />
+          <e p="SystemMenu.cs" t="Include" />
+          <e p="SystemPermission.cs" t="Include" />
+          <e p="SystemRole.cs" t="Include" />
+          <e p="SystemRolePermissionMapping.cs" t="Include" />
+          <e p="SystemUser.cs" t="Include" />
+          <e p="SystemUserRoleMapping.cs" t="Include" />
+          <e p="TypeList.cs" t="Include" />
+          <e p="User" t="Include">
+            <e p="UserData.cs" t="Include" />
+          </e>
+          <e p="ViewMenu.cs" t="Include" />
+          <e p="ViewSystemPermissionWithMenu.cs" t="Include" />
+          <e p="ViewSystemPermissionWithMenu2.cs" t="Include" />
+        </e>
+        <e p="Extensions" t="Include">
+          <e p="AuthContext" t="Include">
+            <e p="AuthContextService.cs" t="Include" />
+            <e p="AuthContextUser.cs" t="Include" />
+          </e>
+          <e p="ConfigurationManager.cs" t="Include" />
+          <e p="CustomException" t="Include">
+            <e p="CanAccess.cs" t="Include" />
+            <e p="CustomAuthorize.cs" t="Include" />
+            <e p="ErrorDetails.cs" t="Include" />
+            <e p="ExceptionMiddleware.cs" t="Include" />
+            <e p="ExceptionMiddlewareExtensions.cs" t="Include" />
+            <e p="HttpException.cs" t="Include" />
+            <e p="UnauthorizeException.cs" t="Include" />
+            <e p="ValidateModelAttribute.cs" t="Include" />
+          </e>
+          <e p="DataAccess" t="Include">
+            <e p="EntityFrameworkExtension.cs" t="Include" />
+            <e p="OrderByExtensions.cs" t="Include" />
+            <e p="SqlParameterHelper.cs" t="Include" />
+          </e>
+          <e p="DataTableConvert.cs" t="Include" />
+          <e p="QueryableExtension.cs" t="Include" />
+          <e p="ResponseModelFactory.cs" t="Include" />
+        </e>
+        <e p="HaikanCRM.Api.csproj" t="IncludeRecursive" />
+        <e p="libman.json" t="Include" />
+        <e p="log4net.config" t="Include" />
+        <e p="logs" t="Include" />
+        <e p="Models" t="Include">
+          <e p="Menu" t="Include">
+            <e p="MenuJsonModel.cs" t="Include" />
+            <e p="Router.cs" t="Include" />
+          </e>
+          <e p="QueryModels" t="Include">
+            <e p="SystemPermissionWithAssignProperty.cs" t="Include" />
+            <e p="SystemPermissionWithMenu.cs" t="Include" />
+          </e>
+          <e p="Response" t="Include">
+            <e p="ResponseModel.cs" t="Include" />
+            <e p="ResponseResultModel.cs" t="Include" />
+          </e>
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="HaikanCRM.Api.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="RequestPayload" t="Include">
+          <e p="Bussiness" t="Include">
+            <e p="BDocumentsRPayload.cs" t="Include" />
+            <e p="BussinessModel.cs" t="Include" />
+          </e>
+          <e p="Client" t="Include">
+            <e p="MyClientRequestPayload.cs" t="Include" />
+            <e p="TreeClient.cs" t="Include" />
+          </e>
+          <e p="Contact" t="Include">
+            <e p="CallLogRequstPaload.cs" t="Include" />
+            <e p="ContactRequstPaload.cs" t="Include" />
+          </e>
+          <e p="Rbac" t="Include">
+            <e p="Department" t="Include">
+              <e p="DepartmentRequestPaload.cs" t="Include" />
+            </e>
+            <e p="Menu" t="Include">
+              <e p="MenuRequestPayload.cs" t="Include" />
+            </e>
+            <e p="Permission" t="Include">
+              <e p="PermissionRequestPayload.cs" t="Include" />
+            </e>
+            <e p="Role" t="Include">
+              <e p="RoleAssignPermissionPayload.cs" t="Include" />
+              <e p="RoleRequestPayload.cs" t="Include" />
+            </e>
+            <e p="User" t="Include">
+              <e p="UserRequestPayload.cs" t="Include" />
+            </e>
+          </e>
+          <e p="RequestPayload.cs" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="ViewModels" t="Include">
+          <e p="business" t="Include">
+            <e p="BDocumentsModels.cs" t="Include" />
+          </e>
+          <e p="CallLog" t="Include">
+            <e p="CallLogViewModels.cs" t="Include" />
+          </e>
+          <e p="Client" t="Include">
+            <e p="AppAddClient.cs" t="Include" />
+            <e p="AppEditModel.cs" t="Include" />
+            <e p="BuiiViewModel.cs" t="Include" />
+            <e p="BusAddFrom.cs" t="Include" />
+            <e p="MyClientViewModel.cs" t="Include" />
+          </e>
+          <e p="Contact" t="Include">
+            <e p="CallLogViewModel.cs" t="Include" />
+            <e p="ContactViewModel.cs" t="Include" />
+          </e>
+          <e p="Rbac" t="Include">
+            <e p="Department" t="Include">
+              <e p="DepartmentCreateViewModel.cs" t="Include" />
+              <e p="DepartmentJsonViewModel.cs" t="Include" />
+            </e>
+            <e p="SystemMenu" t="Include">
+              <e p="MenuCreateViewModel.cs" t="Include" />
+              <e p="MenuEditViewModel.cs" t="Include" />
+              <e p="MenuItem.cs" t="Include" />
+              <e p="MenuJsonModel.cs" t="Include" />
+              <e p="MenuTree.cs" t="Include" />
+            </e>
+            <e p="SystemPermission" t="Include">
+              <e p="PermissionCreateViewModel.cs" t="Include" />
+              <e p="PermissionEditViewModel.cs" t="Include" />
+              <e p="PermissionJsonModel.cs" t="Include" />
+              <e p="PermissionRoleTree.cs" t="Include" />
+            </e>
+            <e p="SystemRole" t="Include">
+              <e p="RoleCreateViewModel.cs" t="Include" />
+              <e p="RoleJsonModel.cs" t="Include" />
+            </e>
+            <e p="SystemUser" t="Include">
+              <e p="IdCardInfo.cs" t="Include" />
+              <e p="SaveUserRolesViewModel.cs" t="Include" />
+              <e p="UserCreateViewModel.cs" t="Include" />
+              <e p="UserEditViewModel.cs" t="Include" />
+              <e p="UserJsonModel.cs" t="Include" />
+              <e p="UserPhoneInfoModel.cs" t="Include" />
+              <e p="UserPwdViewModel.cs" t="Include" />
+              <e p="WXUserInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="wwwroot" t="Include">
+          <e p="UploadFiles" t="Include">
+            <e p="File" t="Include">
+              <e p="20200718_232433032_608cecd1-2abc-47f9-8975-76bc429f3dcf.xlsx" t="Include" />
+            </e>
+            <e p="ImportUserInfoExcel" t="Include">
+              <e p="联系人信息导入20200605104824.xlsx" t="Include" />
+            </e>
+            <e p="ImportUserInfoModel" t="Include">
+              <e p="联系人信息导入模板.xlsx" t="Include" />
+              <e p="联系人基础信息导入模板.xlsx" t="Include" />
+            </e>
+          </e>
+          <e p="新文件夹" t="Include">
+            <e p="TextFile.txt" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="HaikanCRM.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

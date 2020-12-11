@@ -1,0 +1,115 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		
+		{
+		    "path" : "pages/duoduoCRM/home/home",
+		    "style" : {}
+		},
+		// {
+		//     "path" : "pages/duoduoCRM/message/message",
+		//     "style" : {}
+		// },
+		// {
+		//     "path" : "pages/duoduoCRM/gognneng/gognneng",
+		//     "style" : {}
+		// },
+        {
+            "path" : "pages/duoduoCRM/clien/clien",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/duoduoCRM/personal/personal",
+            "style" : {}
+        }
+		,{
+		    "path" : "pages/duoduoCRM/information/elsemation",
+		    "style" : {}
+		}
+		,{
+		    "path" : "pages/duoduoCRM/information/addmation",
+		    "style" : {}
+		}
+        ,{
+            "path" : "pages/duoduoCRM/calllog/calllog",
+            "style" : {}
+        }
+
+        ,{
+            "path" : "pages/duoduoCRM/business/editbusiness",
+            "style" : {}
+        }
+		
+		,{
+		    "path" : "pages/duoduoCRM/business/business",
+		    "style" : {}
+		}
+        // ,{
+        //     "path" : "pages/duoduoCRM/information/information",
+        //     "style" : {}
+        // }
+        ,{
+            "path" : "pages/duoduoCRM/business/addbusiness",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/duoduoCRM/calllog/addcalllog",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/duoduoCRM/clien/addclien",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/duoduoCRM/personal/addpersonal",
+            "style" : {}
+        }
+ 
+        ,{
+            "path" : "pages/duoduoCRM/business/infobusiness",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/duoduoCRM/clien/infoclien",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/duoduoCRM/personal/infopersonal",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/duoduoCRM/personal/editpersonal",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/duoduoCRM/clien/editclien",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/duoduoCRM/calllog/editcalllog",
+            "style" : {}
+        }
+		,{
+		    "path" : "pages/duoduoCRM/calllog/addcalllog2",
+		    "style" : {}
+		}
+        ,{
+            "path" : "pages/duoduoCRM/calllog/newaddcall",
+            "style" : {}
+        },
+		{
+		    "path" : "pages/duoduoCRM/calllog/infoCallLog",
+		    "style" : {}
+		}
+    ],
+
+	"globalStyle": {
+	        "navigationBarTextStyle": "black",
+	        "navigationBarTitleText": "多多控智慧CRM",
+	        "navigationBarBackgroundColor": "#F8F8F8",
+	        "backgroundColor": "#F8F8F8",
+	        "navigationStyle":"custom"
+	        // "app-plus": {
+	        //     "titleView": false
+	        // }
+	    }
+}

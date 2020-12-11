@@ -1,0 +1,3128 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HaikanCRM.Api</name>
+    </assembly>
+    <members>
+        <member name="T:HaikanCRM.Api.Auth.AppAuthenticationSettings">
+            <summary>
+            JWT授权的配置项
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Auth.AppAuthenticationSettings.AppId">
+            <summary>
+            应用ID
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Auth.AppAuthenticationSettings.Secret">
+            <summary>
+            应用密钥(真实项目中可能区分应用,不同的应用对应惟一的密钥)
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Auth.JwtBearerAuthenticationExtension">
+            <summary>
+            jwt工具类
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Auth.JwtBearerAuthenticationExtension.AddJwtBearerAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,HaikanCRM.Api.Auth.AppAuthenticationSettings)">
+            <summary>
+            注册JWT Bearer认证服务的静态扩展方法
+            </summary>
+            <param name="services"></param>
+            <param name="appSettings">JWT授权的配置项</param>
+        </member>
+        <member name="M:HaikanCRM.Api.Auth.JwtBearerAuthenticationExtension.GetJwtAccessToken(HaikanCRM.Api.Auth.AppAuthenticationSettings,System.Security.Claims.ClaimsIdentity)">
+            <summary>
+            创建token
+            </summary>
+            <param name="appSettings"></param>
+            <param name="claimsIdentity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Auth.JwtBearerAuthenticationExtension.GetJwtAccessToken(HaikanCRM.Api.Auth.AppAuthenticationSettings,System.Security.Claims.ClaimsIdentity,System.Double)">
+            <summary>
+            创建token,
+            </summary>
+            <param name="appSettings">配置项</param>
+            <param name="claimsIdentity"></param>
+            <param name="day">token有效天数</param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Configurations.AppSettings">
+            <summary>
+            程序配置选项
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Configurations.AppSettings.IsTrialVersion">
+            <summary>
+            是否是体验版
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Configurations.ConnectionStrings">
+            <summary>
+            数据库配置项
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Configurations.ConnectionStrings.DefaultConnection">
+            <summary>
+            数据库默认连接字符串
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Configurations.MappingProfile">
+            <summary>
+            用于实体类和自定义类型的转换
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Configurations.MappingProfile.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Configurations.MdDesEncrypt">
+            <summary>
+            配置项类
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Controllers.AccountController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.AccountController.#ctor(HaikanCRM.Api.Entities.HaikanCRMContext)">
+            <summary>
+            
+            </summary>
+            <param name="dbContext"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.AccountController.Profile">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.AccountController.Menu">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Controllers.MenuItemHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.MenuItemHelper.BuildTree(System.Collections.Generic.List{HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuItem},System.String)">
+            <summary>
+            
+            </summary>
+            <param name="menus"></param>
+            <param name="selectedGuid"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Controllers.Api.V1.business.BusinessController">
+            <summary>
+            相关商机的操作接口
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.business.BusinessController.#ctor(HaikanCRM.Api.Entities.HaikanCRMContext)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dbContext"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.business.BusinessController.BusShow(HaikanCRM.Api.RequestPayload.Bussiness.BussinessModel)">
+            <summary>
+            商机列表
+            </summary>
+            <param name="payload"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.business.BusinessController.SelectName(System.Guid)">
+            <summary>
+            获取参与人名字
+            </summary>
+            <param name="businessUuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.business.BusinessController.BusAdd(HaikanCRM.Api.ViewModels.Client.BusAddFrom)">
+            <summary>
+            商机添加
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.business.BusinessController.BusView(System.Guid)">
+            <summary>
+            商机详情
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.business.BusinessController.GetEdit1Shangji(HaikanCRM.Api.RequestPayload.Bussiness.BussinessModel)">
+            <summary>
+            获取商机单独页面
+            </summary>
+            <param name="payload"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.business.BusinessController.SelectNameLog(System.String,HaikanCRM.Api.Entities.HaikanCRMContext)">
+            <summary>
+            获取参与人名字
+            </summary>
+            <param name="contactBusName"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.business.BusinessController.CooM(System.Nullable{System.Guid})">
+            <summary>
+            根据uuid查客户经理的名字
+            </summary>
+            <param name="clientUuid"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Controllers.Api.V1.business.BusinessDocumentsController">
+            <summary>
+            有关商机文件的操作接口
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.business.BusinessDocumentsController.#ctor(HaikanCRM.Api.Entities.HaikanCRMContext,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dbContext"></param>
+            <param name="hostingEnvironment"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.business.BusinessDocumentsController.List(HaikanCRM.Api.RequestPayload.Bussiness.BDocumentsRPayload)">
+            <summary>
+            商机文件列表
+            </summary>
+            <param name="payload"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.business.BusinessDocumentsController.Create(HaikanCRM.Api.ViewModels.Business.BDocumentsModels)">
+            <summary>
+            添加商机文件
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.business.BusinessDocumentsController.Edit(System.Guid)">
+            <summary>
+            获取编辑的商机文件信息
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.business.BusinessDocumentsController.Edit(HaikanCRM.Api.ViewModels.Business.BDocumentsModels)">
+            <summary>
+            保存编辑的商机文件信息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.business.BusinessDocumentsController.Delete(System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.business.BusinessDocumentsController.Batch(System.String,System.String)">
+            <summary>
+            批量操作
+            </summary>
+            <param name="command"></param>
+            <param name="ids">角色ID,多个以逗号分隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.business.BusinessDocumentsController.UpLoadAsync(System.String)">
+            <summary>
+            文件上传
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.business.BusinessDocumentsController.DeletetoFile(System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.business.BusinessDocumentsController.UpdateIsDelete(HaikanCRM.Api.Entities.Enums.CommonEnum.IsDeleted,System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="isDeleted"></param>
+            <param name="ids">角色ID字符串,多个以逗号隔开</param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Controllers.Api.V1.Contact.CallLogController">
+            <summary>
+            联系记录的操作接口
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.CallLogController.#ctor(HaikanCRM.Api.Entities.HaikanCRMContext)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dbContext"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.CallLogController.Gealluser(System.String)">
+            <summary>
+            根据客户的uuid获取联系人下拉框的值
+            </summary>
+            <param name="clientUuid">客户的uuid</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.CallLogController.Lianxiren(System.Guid)">
+            <summary>
+            联系人下拉框
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.CallLogController.SelectName(System.Guid)">
+            <summary>
+            通过联系人uuid查询联系人名称
+            </summary>
+            <param name="contactPersonUuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.CallLogController.Kehu(System.Guid)">
+            <summary>
+            通过联系人获取客户
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.CallLogController.GetSystemUser(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="userid"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController">
+            <summary>
+            相关联系人的操作接口
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.#ctor(HaikanCRM.Api.Entities.HaikanCRMContext,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dbContext"></param>
+            <param name="hostingEnvironment"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.List(HaikanCRM.Api.RequestPayload.Contact.ContactRequstPaload)">
+            <summary>
+            联系人显示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.List1(HaikanCRM.Api.RequestPayload.Contact.CallLogRequstPaload)">
+            <summary>
+            联系记录显示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.CooM(System.Nullable{System.Guid})">
+            <summary>
+            
+            </summary>
+            <param name="clientUuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.Create(HaikanCRM.Api.ViewModels.Contact.ContactViewModel)">
+            <summary>
+            添加联系人信息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.Create2(HaikanCRM.Api.ViewModels.Contact.CallLogViewModel)">
+            <summary>
+            添加联系记录
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.Create1(HaikanCRM.Api.ViewModels.Contact.CallLogViewModel)">
+            <summary>
+            添加联系记录
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.Shangji(System.String)">
+            <summary>
+            获取当前客户的所有商机
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.Huoqukehu">
+            <summary>
+            获取所有的客户
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.GetEdit(System.String)">
+            <summary>
+            获取联系人编辑数据
+            </summary>
+            <param name="guid">申请惟一编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.GetEdit2(System.String,System.String)">
+            <summary>
+            点击客户列表的联系人获取详情
+            </summary>
+            <param name="guid">申请惟一编码</param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.LoadEditDataXq(System.String)">
+            <summary>
+            点击客户列表的联系人获取详情
+            </summary>
+            <param name="guid">申请惟一编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.Edit(HaikanCRM.Api.ViewModels.Contact.ContactViewModel)">
+            <summary>
+            保存编辑联系人(保存)
+            </summary>
+            <param name="model">申请视图实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.GetEdit1(System.String)">
+            <summary>
+            获取联系记录编辑数据
+            </summary>
+            <param name="guid">申请惟一编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.Edit1(HaikanCRM.Api.ViewModels.Contact.CallLogViewModel)">
+            <summary>
+            保存编辑联系记录(保存)
+            </summary>
+            <param name="model">申请视图实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.ShopInfoImport(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            导入
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.Delete(System.String,System.String)">
+            <summary>
+            删除客户的联系人
+            </summary>
+            <param name="ids">uuID,多个以逗号分隔</param>
+            <param name="usName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.Delete1(System.String,System.String)">
+            <summary>
+            删除联系记录
+            </summary>
+            <param name="ids">ID,多个以逗号分隔</param>
+            <param name="usName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.GetSelectCustomer(System.String)">
+            <summary>
+            查询出所有客户
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.GetAllCustomer">
+            <summary>
+            查询出所有客户的下拉列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.GeallUser">
+             <summary>
+            获取所有用户
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.AppbusRelatedConName(System.Object)">
+            <summary>
+            钉钉端添加或编辑商机页面根据输入客户查询该相关联系人
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.AppbusRelatedConGuid(System.Object)">
+            <summary>
+            钉钉端商机页面根据当前商机详情客户查询相关联系人(页面加载查询赋值)
+            </summary>
+            <param name="model2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.GetCustomerDropdown">
+            <summary>
+            查询全部客户赋值下拉框
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.Gethangye">
+            <summary>
+            查询全部行业赋值下拉框
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.Jiekoulxr(System.Guid)">
+            <summary>
+            查询出当前商机所属客户的全部联系人
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.Jiekoushangji(System.Guid)">
+            <summary>
+            查询出当前客户所属得全部商机
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.LoadSimpleList(System.Guid)">
+            <summary>
+            查询出当前客户所属得全部商机
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.Save_manger(System.Object)">
+            <summary>
+            保存编辑经理权限(保存)
+            </summary>
+            <param name="model">申请视图实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Contact.ContactController.Geallmanager">
+            <summary>
+            查询出所有客户经理
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController">
+            <summary>
+            相关客户的操作接口
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.#ctor(HaikanCRM.Api.Entities.HaikanCRMContext)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dbContext"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.List(HaikanCRM.Api.RequestPayload.Client.MyClientRequestPayload)">
+            <summary>
+            客户列表
+            </summary>
+            <param name="payload"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.SelectcpName(System.Guid)">
+            <summary>
+            根据uuid获取联系人
+            </summary>
+            <param name="clientUuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.GetList(HaikanCRM.Api.RequestPayload.Client.TreeClient)">
+            <summary>
+            树形控件 客户列表
+            </summary>
+            <param name="tc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.ChildrenData(System.Guid)">
+            <summary>
+            获取子级方法(拼接到json字符串)
+            </summary>
+            <param name="clientuuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.Allsystemuser">
+            <summary>
+            用户穿梭框
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.Selectsystemuser(System.Int32)">
+            <summary>
+            已选择用户
+            </summary>
+            <param name="id">任务id</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.Selectsystemuser1(System.Int32)">
+            <summary>
+            已选择用户
+            </summary>
+            <param name="id">任务id</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.Tree">
+            <summary>
+            树形结构
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.LoadMenuTree">
+            <summary>
+            树形结构
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.SupTree(System.String)">
+            <summary>
+            树形结构
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.SupLoadMenuTree(System.String)">
+            <summary>
+            树形结构
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.Create(HaikanCRM.Api.ViewModels.Client.MyClientViewModel)">
+            <summary>
+            后台创建客户
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.GetEdit(System.String)">
+            <summary>
+            获取客户编辑数据
+            </summary>
+            <param name="guid">申请惟一编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.BusView2(HaikanCRM.Api.RequestPayload.Contact.CallLogRequstPaload)">
+            <summary>
+            商机联系记录详情
+            </summary>
+            <param name="payload"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.BusViewlxrLog(HaikanCRM.Api.RequestPayload.Contact.CallLogRequstPaload)">
+            <summary>
+            商机联系记录详情
+            </summary>
+            <param name="payload"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.SelectName(System.Nullable{System.Guid})">
+            <summary>
+            当前联系记录的联系方式
+            </summary>
+            <param name="contactDetailsUuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.BusView3(System.Guid)">
+            <summary>
+            商机联系记录基础信息
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.Edit(HaikanCRM.Api.ViewModels.Client.MyClientViewModel)">
+            <summary>
+            保存编辑客户(保存)
+            </summary>
+            <param name="model">申请视图实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.GetEdit1(HaikanCRM.Api.RequestPayload.Bussiness.BussinessModel)">
+            <summary>
+            获取商机
+            </summary>
+            <param name="payload"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.BusEdit(System.Object)">
+            <summary>
+            修改商机
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.BusAdd(HaikanCRM.Api.ViewModels.Client.BusAddFrom)">
+            <summary>
+            商机添加
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.UpdateIsDelete(System.String,System.String)">
+            <summary>
+            删除商机
+            </summary>
+            <param name="ids">uuID字符串,多个以逗号隔开</param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.Batch(System.String,System.String,System.String)">
+            <summary>
+            删除多条批量操作
+            </summary>
+            <param name="command"></param>
+            <param name="ids">商机ID,多个以逗号分隔</param>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.EditBusiness(HaikanCRM.Api.ViewModels.Client.BuiiViewModel)">
+            <summary>
+            保存编辑(保存)
+            </summary>
+            <param name="model">申请视图实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.GetTravel(HaikanCRM.Api.RequestPayload.Client.MyClientRequestPayload)">
+            <summary>
+            获取联系人数据
+            </summary>
+            <param name="payload"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.EditContactPerson(HaikanCRM.Api.ViewModels.Client.MyClientViewModel)">
+            <summary>
+            添加联系人
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.Delete(System.String,System.String)">
+            <summary>
+            删除
+            </summary>
+            <param name="ids">ID,多个以逗号分隔</param>
+            <param name="usName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.AllStatus">
+            <summary>
+            获取全部状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.AllTypes">
+            <summary>
+            获取全部类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.AllIndustry">
+            <summary>
+            获取全部类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.ClientIndustryList(HaikanCRM.Api.RequestPayload.Client.MyClientRequestPayload)">
+            <summary>
+            行业列表
+            </summary>
+            <param name="payload"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.IdunesyAdd(System.Object)">
+            <summary>
+            行业添加
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.IdunesyView(System.Guid)">
+            <summary>
+            行业详情
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.IdunesyEdit(System.Object)">
+            <summary>
+            修改行业
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.IndustryBatch(System.String,System.String)">
+            <summary>
+            行业删除多条批量操作
+            </summary>
+            <param name="command"></param>
+            <param name="ids">行业ID,多个以逗号分隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.UpdateIsDelete(System.String)">
+            <summary>
+            删除行业
+            </summary>
+            <param name="ids">厢房ID字符串,多个以逗号隔开</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.LogList(HaikanCRM.Api.RequestPayload.Client.MyClientRequestPayload)">
+            <summary>
+            操作日志列表
+            </summary>
+            <param name="payload"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.CustomerController.SelectNameLog(System.String,HaikanCRM.Api.Entities.HaikanCRMContext)">
+            <summary>
+            获取参与人名字
+            </summary>
+            <param name="contactBusName"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Controllers.Api.V1.Customer.MenuTreeHelper">
+            <summary>
+            树工具类
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Customer.MenuTreeHelper.BuildTree(System.Collections.Generic.List{HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuTree})">
+            <summary>
+            
+            </summary>
+            <param name="menus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.IndexStatistics.IndexStatisticsController.#ctor(HaikanCRM.Api.Entities.HaikanCRMContext)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dbContext"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.IndexStatistics.IndexStatisticsController.GetBaseInfo">
+            <summary>
+            首页基础数据统计
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.IndexStatistics.IndexStatisticsController.GetCircle">
+            <summary>
+            首页统计客户地区饼图
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.IndexStatistics.IndexStatisticsController.GetBarChart">
+            <summary>
+            首也柱形统计图
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.IndexStatistics.IndexStatisticsController.GetLineChart">
+            <summary>
+            首页统计折线图
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCallLogController">
+            <summary>
+            钉钉端相关联系记录操作接口
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCallLogController.#ctor(HaikanCRM.Api.Entities.HaikanCRMContext)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dbContext"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCallLogController.AppCallLogList(HaikanCRM.Api.RequestPayload.Contact.CallLogRequstPaload)">
+            <summary>
+            钉钉端联系记录列表
+            </summary>
+            <param name="payload"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCallLogController.AppCallLogInfo(System.String)">
+            <summary>
+            钉钉端联系记录详情
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCallLogController.GetContactCallLogList(System.String)">
+            <summary>
+            联系人界面联系记录
+            </summary>
+            <param name="contactPersonUuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCallLogController.CallLogList(System.String)">
+            <summary>
+            查看某个客户的联系记录
+            </summary>
+            <param name="clientUuid">客户的uuid</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCallLogController.GetCusIdSelectBus(System.String,System.String)">
+            <summary>
+            根据客户ID获取商机下拉框的值
+            </summary>
+            <param name="clientUuid"></param>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCallLogController.PassCusSelectCon(HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCallLogController.Dataqqq)">
+            <summary>
+            根据输入客户获取该客户联系人
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCallLogController.PassCusSelectBus(HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCallLogController.Dataqqq)">
+            <summary>
+            根据输入客户获取该客户商机
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCallLogController.Dataqqq">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCallLogController.Dataqqq.ClientNames">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCallLogController.AppEditCallLog(HaikanCRM.Api.ViewModels.CallLog.CallLogViewModels)">
+            <summary>
+            钉钉端修改客户联系记录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCallLogController.AppAddCallLog(HaikanCRM.Api.ViewModels.CallLog.CallLogViewModels)">
+            <summary>
+            添加联系记录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCallLogController.AppConSkipAddCallLog(HaikanCRM.Api.ViewModels.CallLog.CallLogViewModels)">
+            <summary>
+            联系人详情页面跳转添加联系记录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppContactController.#ctor(HaikanCRM.Api.Entities.HaikanCRMContext)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dbContext"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppContactController.AppAddContact(HaikanCRM.Api.ViewModels.Contact.ContactViewModel)">
+            <summary>
+            钉钉端联系人添加
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppContactController.AppEditContact(HaikanCRM.Api.ViewModels.Contact.ContactViewModel)">
+            <summary>
+            钉钉端联系人编辑
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppContactController.AppContectList(HaikanCRM.Api.RequestPayload.Contact.ContactRequstPaload)">
+            <summary>
+            钉钉端联系人列表展示
+            </summary>
+            <param name="payload"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppContactController.AppShowContactIId(System.Int32)">
+             <summary>
+            查询联系人详情
+             </summary>
+             <param name="id"></param>
+             <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppContactController.AppShowContactGuid(System.String)">
+            <summary>
+            查询联系人详情
+            </summary>
+            <param name="contactPersonUuid"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCustomerController">
+            <summary>
+            钉钉端的操作接口
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCustomerController.#ctor(HaikanCRM.Api.Entities.HaikanCRMContext)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dbContext"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCustomerController.AllStatus">
+            <summary>
+            获取全部状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCustomerController.AllTypes">
+            <summary>
+            获取全部类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCustomerController.AllIndustry">
+            <summary>
+            获取全部行业
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCustomerController.AppGetCustomerInfo(System.String)">
+            <summary>
+            根据uuid查询客户信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCustomerController.SavaEditCustomerInfo(HaikanCRM.Api.ViewModels.Client.AppEditModel)">
+            <summary>
+            保存编辑客户信息(保存)
+            </summary>
+            <param name="model">申请视图实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCustomerController.VagueSelectCustomer">
+            <summary>
+            查询客户赋值模糊匹配控件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCustomerController.VagueSelectContact">
+            <summary>
+            查询联系人赋值模糊匹配控件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCustomerController.VagueSelectBusiness">
+            <summary>
+            查询商机赋值模糊匹配控件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCustomerController.AppCustomerAdd(HaikanCRM.Api.ViewModels.Client.AppAddClient)">
+            <summary>
+            钉钉端添加客户
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCustomerController.AppCustomerInfo(System.String)">
+            <summary>
+            钉钉端获取客户详情
+            </summary>
+            <param name="clientUuid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCustomerController.AppCustomerCallLog(System.String)">
+             <summary>
+            获取该客户全部联系记录	
+             </summary>
+             <param name="clientUuid"></param>
+             <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCustomerController.AppCustomerList(HaikanCRM.Api.ViewModels.Client.AppAddClient)">
+            <summary>
+            获取钉钉端客户列表
+            </summary>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCustomerController.Geterjicd(System.String,System.String,System.String)">
+            <summary>
+            递归算法
+            </summary>
+            <param name="ids"></param>
+            <param name="name1"></param>
+            <param name="name2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppCustomerController.Gettruefalse(System.String,System.String,System.String,System.String)">
+            <summary>
+            判断当前人有没有权限看到这个栏目
+            </summary>
+            <param name="id1"></param>
+            <param name="id2"></param>
+            <param name="name1"></param>
+            <param name="name2"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppMessageController">
+            <summary>
+            相关消息的操作接口
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppMessageController.#ctor(HaikanCRM.Api.Entities.HaikanCRMContext,AutoMapper.IMapper)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppMessageController.MessageShow(System.String)">
+            <summary>
+            查看自己的消息列表
+            </summary>
+            <param name="guid">systemUser的uuid</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppMessageController.MesDelete(System.Guid)">
+            <summary>
+            删除自己的消息列表
+            </summary>
+            <param name="guid">systemUser的uuid</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppMessageController.UserList(System.String)">
+            <summary>
+            钉钉端显示通讯录
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Mobi.AppMessageController.Xxdd(System.Guid)">
+            <summary>
+            计算用户当天的联系记录数量
+            </summary>
+            <param name="SystemUserUuid"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Controllers.Api.V1.DingDing.DingDingController">
+            <summary>
+            钉钉端的操作接口
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.DingDing.DingDingController.Getuserinfo(System.String)">
+            <summary>
+            获取(企业内部应用)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.DingDing.DingDingController.Tongxunlu">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.DingDing.DingDingController.GetDepart(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="access_token"></param>
+            <param name="depid"></param>
+            <param name="departid"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.DingDing.DingDingController.HmacSHA256(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="secret"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.DingDing.DingDingController.Getalluseranddep">
+            <summary>
+            后台同步部门和人员信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.DingDing.DingDingController.PersonalList(System.Guid)">
+            <summary>
+            钉钉显示个人信息
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.DingDing.DingDingController.Showmantion(System.Guid)">
+            <summary>
+            显示个人信息详情
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.DingDing.DingDingController.Addmantion(System.Object)">
+            <summary>
+            编辑个人信息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Controllers.Api.V1.Rbac.GlobalController">
+            <summary>
+            有关全局设置的操作接口
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.GlobalController.#ctor(HaikanCRM.Api.Entities.HaikanCRMContext,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+             <summary>
+            构造函数
+             </summary>
+             <param name="dbContext"></param>
+             <param name="iWebHostEnvironment"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.GlobalController.List">
+            <summary>
+            查看数据列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.GlobalController.Edit(HaikanCRM.Api.ViewModels.Rbac.GlobalViewModel)">
+            <summary>
+            保存编辑后的角色信息
+            </summary>
+            <param name="model">角色视图实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.GlobalController.UpLoadAsync">
+            <summary>
+            图片上传
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.IconController.#ctor(HaikanCRM.Api.Entities.HaikanCRMContext,AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+            <param name="dbContext"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.IconController.FindByKeyword(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Controllers.Api.V1.Rbac.RoleController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.RoleController.#ctor(HaikanCRM.Api.Entities.HaikanCRMContext,AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+            <param name="dbContext"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.RoleController.List(HaikanCRM.Api.RequestPayload.Rbac.Role.RoleRequestPayload)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.RoleController.Create(HaikanCRM.Api.ViewModels.Rbac.SystemRole.RoleCreateViewModel)">
+            <summary>
+            创建角色
+            </summary>
+            <param name="model">角色视图实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.RoleController.Edit(System.Guid)">
+            <summary>
+            编辑角色
+            </summary>
+            <param name="guid">角色惟一编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.RoleController.Edit(HaikanCRM.Api.ViewModels.Rbac.SystemRole.RoleCreateViewModel)">
+            <summary>
+            保存编辑后的角色信息
+            </summary>
+            <param name="model">角色视图实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.RoleController.Delete(System.String)">
+            <summary>
+            删除角色
+            </summary>
+            <param name="ids">角色ID,多个以逗号分隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.RoleController.Recover(System.String)">
+            <summary>
+            恢复角色
+            </summary>
+            <param name="ids">角色ID,多个以逗号分隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.RoleController.Batch(System.String,System.String)">
+            <summary>
+            批量操作
+            </summary>
+            <param name="command"></param>
+            <param name="ids">角色ID,多个以逗号分隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.RoleController.AssignPermission(HaikanCRM.Api.RequestPayload.Rbac.Role.RoleAssignPermissionPayload)">
+            <summary>
+            为指定角色分配权限
+            </summary>
+            <param name="payload">角色分配权限的请求载体类</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.RoleController.FindListByUserGuid(System.Guid)">
+            <summary>
+            获取指定用户的角色列表
+            </summary>
+            <param name="guid">用户GUID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.RoleController.FindSimpleList">
+            <summary>
+            查询所有角色列表(只包含主要的字段信息:name,code)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.RoleController.UpdateIsDelete(HaikanCRM.Api.Entities.Enums.CommonEnum.IsDeleted,System.String)">
+            <summary>
+            删除角色
+            </summary>
+            <param name="isDeleted"></param>
+            <param name="ids">角色ID字符串,多个以逗号隔开</param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Controllers.Api.V1.Rbac.UserController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.UserController.#ctor(HaikanCRM.Api.Entities.HaikanCRMContext,AutoMapper.IMapper,Microsoft.Extensions.Options.IOptions{HaikanCRM.Api.Configurations.MdDesEncrypt},Microsoft.Extensions.Options.IOptions{HaikanCRM.Api.Auth.AppAuthenticationSettings})">
+            <summary>
+            
+            </summary>
+            <param name="dbContext"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.UserController.List(HaikanCRM.Api.RequestPayload.Rbac.User.UserRequestPayload)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.UserController.Create(HaikanCRM.Api.ViewModels.Rbac.SystemUser.UserCreateViewModel)">
+            <summary>
+            创建用户
+            </summary>
+            <param name="model">用户视图实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.UserController.Edit(System.Guid)">
+            <summary>
+            编辑用户
+            </summary>
+            <param name="guid">用户GUID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.UserController.Edit(HaikanCRM.Api.ViewModels.Rbac.SystemUser.UserEditViewModel)">
+            <summary>
+            保存编辑后的用户信息
+            </summary>
+            <param name="model">用户视图实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.UserController.EditUserPwd(HaikanCRM.Api.ViewModels.Rbac.SystemUser.UserPwdViewModel)">
+            <summary>
+            修改用户密码
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.UserController.Delete(System.String)">
+            <summary>
+            删除用户
+            </summary>
+            <param name="ids">用户GUID,多个以逗号分隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.UserController.Recover(System.String)">
+            <summary>
+            恢复用户
+            </summary>
+            <param name="ids">用户GUID,多个以逗号分隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.UserController.Batch(System.String,System.String)">
+            <summary>
+            批量操作
+            </summary>
+            <param name="command"></param>
+            <param name="ids">用户ID,多个以逗号分隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.UserController.SetIDCard(HaikanCRM.Api.ViewModels.Rbac.SystemUser.IdCardInfo)">
+            <summary>
+            绑定身份证号
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.UserController.SaveRoles(HaikanCRM.Api.ViewModels.Rbac.SystemUser.SaveUserRolesViewModel)">
+            <summary>
+            保存用户-角色的关系映射数据
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.Api.V1.Rbac.UserController.UpdateIsDelete(HaikanCRM.Api.Entities.Enums.CommonEnum.IsDeleted,System.String)">
+            <summary>
+            删除用户
+            </summary>
+            <param name="isDeleted"></param>
+            <param name="ids">用户ID字符串,多个以逗号隔开</param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Controllers.ErrorController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.ErrorController.Code(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Controllers.OauthController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.OauthController.#ctor(Microsoft.Extensions.Options.IOptions{HaikanCRM.Api.Auth.AppAuthenticationSettings},HaikanCRM.Api.Entities.HaikanCRMContext,Microsoft.Extensions.Options.IOptions{HaikanCRM.Api.Configurations.MdDesEncrypt})">
+            <summary>
+            
+            </summary>
+            <param name="appSettings"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.OauthController.Auth(HaikanCRM.Api.Entities.User.UserData)">
+            <summary>
+            
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.OauthController.WXAuth2(HaikanCRM.Api.Entities.User.UserData)">
+            <summary>
+            微信端--手机号与密码登录
+            </summary>
+            <param name="userdata"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.OauthController.WXAuth(HaikanCRM.Api.ViewModels.Rbac.SystemUser.WXUserInfo)">
+            <summary>
+            微信授权登录
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.OauthController.WXPhone(HaikanCRM.Api.ViewModels.Rbac.SystemUser.WXUserInfo)">
+            <summary>
+            解析手机号码
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.OauthController.WXOpenAuth(System.String)">
+            <summary>
+            微信端--手机号与密码登录
+            </summary>
+            <param name="openid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.OauthController.UnifyAuth(System.String)">
+            <summary>
+            统一身份登录
+            </summary>
+            <param name="unifyToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Controllers.TestController">
+            <summary>
+            测试控制器
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Controllers.TestController.Logger">
+            <summary>
+            测试日志
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Entities.Enums.CommonEnum">
+            <summary>
+            通用枚举类
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Entities.Enums.CommonEnum.IsDeleted">
+            <summary>
+            是否已删
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.Entities.Enums.CommonEnum.IsDeleted.All">
+            <summary>
+            所有
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.Entities.Enums.CommonEnum.IsDeleted.No">
+            <summary>
+            否
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.Entities.Enums.CommonEnum.IsDeleted.Yes">
+            <summary>
+            是
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Entities.Enums.CommonEnum.IsLocked">
+            <summary>
+            是否已被锁定
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.Entities.Enums.CommonEnum.IsLocked.UnLocked">
+            <summary>
+            未锁定
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.Entities.Enums.CommonEnum.IsLocked.Locked">
+            <summary>
+            已锁定
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Entities.Enums.CommonEnum.IsEnabled">
+            <summary>
+            是否可用
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.Entities.Enums.CommonEnum.IsEnabled.No">
+            <summary>
+            否
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.Entities.Enums.CommonEnum.IsEnabled.Yes">
+            <summary>
+            是
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Entities.Enums.CommonEnum.Status">
+            <summary>
+            用户状态
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.Entities.Enums.CommonEnum.Status.All">
+            <summary>
+            未指定
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.Entities.Enums.CommonEnum.Status.Forbidden">
+            <summary>
+            已禁用
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.Entities.Enums.CommonEnum.Status.Normal">
+            <summary>
+            正常
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Entities.Enums.CommonEnum.PermissionType">
+            <summary>
+            权限类型
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.Entities.Enums.CommonEnum.PermissionType.Menu">
+            <summary>
+            菜单
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.Entities.Enums.CommonEnum.PermissionType.Action">
+            <summary>
+            按钮/操作/功能
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Entities.Enums.CommonEnum.YesOrNo">
+            <summary>
+            是否枚举
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.Entities.Enums.CommonEnum.YesOrNo.All">
+            <summary>
+            所有
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.Entities.Enums.CommonEnum.YesOrNo.No">
+            <summary>
+            否
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.Entities.Enums.CommonEnum.YesOrNo.Yes">
+            <summary>
+            是
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Extensions.AuthContext.AuthContextService.Configure(Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            
+            </summary>
+            <param name="httpContextAccessor"></param>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.AuthContext.AuthContextService.Current">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.AuthContext.AuthContextService.CurrentUser">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.AuthContext.AuthContextService.IsAuthenticated">
+            <summary>
+            是否已授权
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.AuthContext.AuthContextService.IsSupperAdministator">
+            <summary>
+            是否是超级管理员
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Extensions.AuthContext.AuthContextUser">
+            <summary>
+            登录用户上下文
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.AuthContext.AuthContextUser.Guid">
+            <summary>
+            用户GUID
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.AuthContext.AuthContextUser.DisplayName">
+            <summary>
+            显示名
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.AuthContext.AuthContextUser.LoginName">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.AuthContext.AuthContextUser.EmailAddress">
+            <summary>
+            电子邮箱
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.AuthContext.AuthContextUser.UserType">
+            <summary>
+            用户类型
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.AuthContext.AuthContextUser.Avator">
+            <summary>
+            头像地址
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.AuthContext.AuthContextUser.Roleid">
+            <summary>
+            角色id
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.AuthContext.AuthContextUser.RoleName">
+            <summary>
+            角色名
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.AuthContext.AuthContextUser.DDY">
+            <summary>
+            督导员
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.AuthContext.AuthContextUser.YH">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.AuthContext.AuthContextUser.ZYZ">
+            <summary>
+            志愿者
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.AuthContext.AuthContextUser.SJ">
+            <summary>
+            商家
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Extensions.ConfigurationManager">
+            <summary>
+            配置文件管理器
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.ConfigurationManager.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.ConfigurationManager.AppSettings">
+            <summary>
+            读取配置文件[AppSettings]节点数据
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.ConfigurationManager.ConnectionStrings">
+            <summary>
+            读取配置文件[ConnectionStrings]
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.ConfigurationManager.HaikanPassport_IfUse">
+            <summary>
+            读取配置文件[HaikanPassport_IfUse]
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Extensions.CustomException.CanAccess">
+            <summary>
+            用户可以访问的控制器及操作权限
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.CustomException.CanAccess.Controller">
+            <summary>
+            控制器
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.CustomException.CanAccess.Actions">
+            <summary>
+            Action集合
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Extensions.CustomException.OwnedApiPermission">
+            <summary>
+            用户拥有的API操作权限
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Extensions.CustomException.OwnedApiPermission.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.CustomException.OwnedApiPermission.CanAccesses">
+            <summary>
+            可以访问的API控制器集合
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Extensions.CustomException.OwnedApiPermission.Can(System.String,System.String)">
+            <summary>
+            是否可以访问
+            </summary>
+            <param name="controller"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Extensions.CustomException.CustomAuthorizeAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Extensions.CustomException.CustomAuthorizeAttribute.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.CustomException.CustomAuthorizeAttribute.ActionAlias">
+            <summary>
+            操作的别名
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Extensions.CustomException.CustomAuthorizeAttribute.OnAuthorization(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:HaikanCRM.Api.Extensions.CustomException.ExceptionMiddleware">
+            <summary>
+            异常中间件
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Extensions.CustomException.ExceptionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            
+            </summary>
+            <param name="next"></param>
+        </member>
+        <member name="T:HaikanCRM.Api.Extensions.CustomException.HttpException">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Extensions.CustomException.HttpException.#ctor(System.Net.HttpStatusCode)">
+            <summary>
+            
+            </summary>
+            <param name="statusCode"></param>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.CustomException.HttpException.StatusCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Extensions.CustomException.UnauthorizeException">
+            <summary>
+            未授权的异常类
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Extensions.CustomException.UnauthorizeException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Extensions.CustomException.ValidateModelAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Extensions.CustomException.ValidateModelAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            
+            </summary>
+            <param name="actionContext"></param>
+        </member>
+        <member name="T:HaikanCRM.Api.Extensions.DataAccess.EntityFrameworkExtension">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Extensions.DataAccess.EntityFrameworkExtension.FromSql``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.Object)">
+            <summary>
+            调用ADO.NET执行SQL语句查询泛型集合
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="database">数据库连接上下文</param>
+            <param name="sql">SQL语句</param>
+            <param name="parameters">SQL语句需要的参数</param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Extensions.DataAccess.OrderByExtensions">
+            <summary>
+            排序静态扩展类
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Extensions.DataAccess.QueryParamNameAttribute">
+            <summary>
+            Use for an alternative param name other than the propery name
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Extensions.DataAccess.QueryParamIgnoreAttribute">
+            <summary>
+            Ignore this property
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Extensions.DataAccess.TypeConvertor">
+            <summary>
+            Convert a base data type to another base data type
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Extensions.DataAccess.TypeConvertor.ToNetType(System.Data.DbType)">
+            <summary>
+            Convert db type to .Net data type
+            </summary>
+            <param name="dbType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Extensions.DataAccess.TypeConvertor.ToNetType(System.Data.SqlDbType)">
+            <summary>
+            Convert TSQL type to .Net data type
+            </summary>
+            <param name="sqlDbType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Extensions.DataAccess.TypeConvertor.ToDbType(System.Type)">
+            <summary>
+            Convert .Net type to Db type
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Extensions.DataAccess.TypeConvertor.ToDbType(System.Data.SqlDbType)">
+            <summary>
+            Convert TSQL data type to DbType
+            </summary>
+            <param name="sqlDbType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Extensions.DataAccess.TypeConvertor.ToSqlDbType(System.Type)">
+            <summary>
+            Convert .Net type to TSQL data type
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Extensions.DataAccess.TypeConvertor.ToSqlDbType(System.Data.DbType)">
+            <summary>
+            Convert DbType type to TSQL data type
+            </summary>
+            <param name="dbType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Extensions.DataTableConvert">
+            <summary>
+            把datatable转换为对象集合列表List&lt;T&gt;
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Extensions.DataTableConvert.ToList``1(System.Data.DataTable)">
+            <summary>
+            将DataTable转换成泛型对象列表
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanCRM.Api.Extensions.PhotoCompression.CompressImage(System.String,System.String,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            无损压缩图片
+            </summary>
+            <param name="sFile">原图片地址</param>
+            <param name="dFile">压缩后保存图片地址</param>
+            <param name="flag">压缩质量（数字越小压缩率越高）1-100</param>
+            <param name="size">压缩后图片的最大大小</param>
+            <param name="sfsc">是否是第一次调用</param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Extensions.QueryableExtension">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Extensions.QueryableExtension.Paged``1(System.Linq.IQueryable{``0},System.Int32,System.Int32)">
+            <summary>
+            IQueryable分页
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="query"></param>
+            <param name="currentPage"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Extensions.ResponseModelFactory">
+            <summary>
+            /
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.ResponseModelFactory.CreateInstance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Extensions.ResponseModelFactory.CreateResultInstance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Extensions.Security.GenerateMD5(System.String)">
+            <summary>
+            md5加密
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanCRM.Api.Models.Menu.Router">
+            <summary>
+            用于前端的路由对象
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Models.Menu.RouterMeta">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Models.QueryModels.SystemPermissionWithAssignProperty.Code">
+            <summary>
+            权限编码
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Models.QueryModels.SystemPermissionWithAssignProperty.Name">
+            <summary>
+            权限名称
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Models.QueryModels.SystemPermissionWithAssignProperty.MenuGuid">
+            <summary>
+            权限关联的菜单GUID
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Models.QueryModels.SystemPermissionWithAssignProperty.ActionCode">
+            <summary>
+            权限操作码
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Models.QueryModels.SystemPermissionWithAssignProperty.RoleCode">
+            <summary>
+            角色编码
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Models.QueryModels.SystemPermissionWithAssignProperty.IsAssigned">
+            <summary>
+            权限是否已分配到当前角色
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Models.QueryModels.SystemPermissionWithMenu.PermissionCode">
+            <summary>
+            权限码
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Models.QueryModels.SystemPermissionWithMenu.PermissionActionCode">
+            <summary>
+            权限操作码
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Models.QueryModels.SystemPermissionWithMenu.PermissionName">
+            <summary>
+            权限名称
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Models.QueryModels.SystemPermissionWithMenu.PermissionType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Models.QueryModels.SystemPermissionWithMenu.MenuName">
+            <summary>
+            菜单名称
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Models.QueryModels.SystemPermissionWithMenu.MenuGuid">
+            <summary>
+            菜单GUID
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Models.QueryModels.SystemPermissionWithMenu.MenuAlias">
+            <summary>
+            菜单别名(与前端路由配置中的name值保持一致)
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Models.QueryModels.SystemPermissionWithMenu.IsDefaultRouter">
+            <summary>
+            是否是默认前端路由
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.Models.Response.ResponseModel">
+            <summary>
+            请求响应实体
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Models.Response.ResponseModel.#ctor">
+            <summary>
+            请求响应实体类
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Models.Response.ResponseModel.Code">
+            <summary>
+            响应代码
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Models.Response.ResponseModel.Message">
+            <summary>
+            响应消息内容
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Models.Response.ResponseModel.Data">
+            <summary>
+            返回的响应数据
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Models.Response.ResponseModel.SetSuccess(System.String)">
+            <summary>
+            设置响应状态为成功
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Models.Response.ResponseModel.SetFailed(System.String)">
+            <summary>
+            设置响应状态为失败
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Models.Response.ResponseModel.SetIsTrial(System.String)">
+            <summary>
+            设置响应状态为体验版(返回失败结果)
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Models.Response.ResponseModel.SetError(System.String)">
+            <summary>
+            设置响应状态为错误
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Models.Response.ResponseModel.SetNotFound(System.String)">
+            <summary>
+            设置响应状态为未知资源
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Models.Response.ResponseModel.SetNoPermission(System.String)">
+            <summary>
+            设置响应状态为无权限
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:HaikanCRM.Api.Models.Response.ResponseModel.SetData(System.Object)">
+            <summary>
+            设置响应数据
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:HaikanCRM.Api.Models.Response.ResponseResultModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.Models.Response.ResponseResultModel.TotalCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.Models.Response.ResponseResultModel.SetData(System.Object,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <param name="totalCount"></param>
+        </member>
+        <member name="P:HaikanCRM.Api.RequestPayload.Client.CNames.Names">
+            <summary>
+            列名Names
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.RequestPayload.Client.Feedback">
+            <summary>
+            时间反馈
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.RequestPayload.Client.Feedback.dayout">
+            <summary>
+            1天未联系的客户
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.RequestPayload.Client.Feedback.thrdayout">
+            <summary>
+            3天未联系的客户
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.RequestPayload.Client.Feedback.weekout">
+            <summary>
+            1周未联系的客户
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.RequestPayload.Client.Feedback.monthout">
+            <summary>
+            1个月未联系的客户
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.RequestPayload.Client.Feedback.weekin">
+            <summary>
+            本周内联系的客户
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.RequestPayload.Client.Feedback.monthin">
+            <summary>
+            本月内联系的客户
+            </summary>
+        </member>
+        <member name="F:HaikanCRM.Api.RequestPayload.Client.Feedback.eveout">
+            <summary>
+            无联系的客户
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.RequestPayload.Rbac.Department.DepartmentRequestPaload.IsDeleted">
+            <summary>
+            是否已被删除
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.RequestPayload.Rbac.Menu.MenuRequestPayload">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.RequestPayload.Rbac.Menu.MenuRequestPayload.IsDeleted">
+            <summary>
+            是否已被删除
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.RequestPayload.Rbac.Menu.MenuRequestPayload.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.RequestPayload.Rbac.Menu.MenuRequestPayload.ParentGuid">
+            <summary>
+            上级菜单GUID
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.RequestPayload.Rbac.Permission.PermissionRequestPayload">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.RequestPayload.Rbac.Permission.PermissionRequestPayload.IsDeleted">
+            <summary>
+            是否已被删除
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.RequestPayload.Rbac.Permission.PermissionRequestPayload.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.RequestPayload.Rbac.Permission.PermissionRequestPayload.SystemMenuUuid">
+            <summary>
+            关联菜单GUID
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.RequestPayload.Rbac.Role.RoleAssignPermissionPayload">
+            <summary>
+            角色分配权限的请求载体类
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.RequestPayload.Rbac.Role.RoleAssignPermissionPayload.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.RequestPayload.Rbac.Role.RoleAssignPermissionPayload.RoleCode">
+            <summary>
+            角色编码
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.RequestPayload.Rbac.Role.RoleAssignPermissionPayload.Permissions">
+            <summary>
+            权限列表
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.RequestPayload.Rbac.Role.RoleRequestPayload">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.RequestPayload.Rbac.Role.RoleRequestPayload.IsDeleted">
+            <summary>
+            是否已被删除
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.RequestPayload.Rbac.Role.RoleRequestPayload.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.RequestPayload.Rbac.User.UserRequestPayload">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.RequestPayload.Rbac.User.UserRequestPayload.IsDeleted">
+            <summary>
+            是否已被删除
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.RequestPayload.RequestPayload">
+            <summary>
+            请求实体
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.RequestPayload.RequestPayload.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.RequestPayload.RequestPayload.PageSize">
+            <summary>
+            分页大小
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.RequestPayload.RequestPayload.CurrentPage">
+            <summary>
+            当前页码
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.RequestPayload.RequestPayload.Sort">
+            <summary>
+            排序对象集合(支持多个字段排序)
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.RequestPayload.RequestPayload.OrderBy">
+            <summary>
+            组合后的排序字符串
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.RequestPayload.RequestPayload.FirstSort">
+            <summary>
+            第一个排序字段(单个字段排序)
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.RequestPayload.RequestPayload.Kw">
+            <summary>
+            搜索关键字
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.RequestPayload.Sort">
+            <summary>
+            排序实体对象
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.RequestPayload.Sort.#ctor">
+            <summary>
+            排序实体对象构造函数
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.RequestPayload.Sort.Field">
+            <summary>
+            排序字段
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.RequestPayload.Sort.Direct">
+            <summary>
+            排序方向
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.ViewModels.Client.Children">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.Children.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.Children.ClientUuid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.Children.ClientName">
+            <summary>
+            浙工大材料学院
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.Children.ClientManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.Children.StatusName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.Children.BusinessUuid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.Children.ClientPhone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.Children.ClientPostcode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.Children.ClientAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.Children.checkbox">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.Children.children">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.ViewModels.Client.ListData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.ListData.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.ListData.ClientUuid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.ListData.ClientName">
+            <summary>
+            浙江工业大学
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.ListData.ClientManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.ListData.StatusName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.ListData.BusinessUuid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.ListData.ClientPhone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.ListData.ClientPostcode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.ListData.ClientAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.ListData.checkbox">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.ListData.children">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.ViewModels.Client.CustomerRoot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.CustomerRoot.code">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.CustomerRoot.message">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Client.CustomerRoot.ListData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.ViewModels.Contact.ContactRoot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Contact.ContactRoot.code">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Contact.ContactRoot.message">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Contact.ContactRoot.ListData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.ViewModels.Contact.ListData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Contact.ListData.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Contact.ListData.ContactName">
+            <summary>
+            李四
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Contact.ListData.ContactPersonUuid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Contact.ListData.ClientName">
+            <summary>
+            湖南卫视
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Contact.ListData.phone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.DIngDing.PersistentCodeResult12.errcode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.DIngDing.PersistentCodeResult12.sys_level">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.DIngDing.PersistentCodeResult12.is_sys">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.DIngDing.PersistentCodeResult12.name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.DIngDing.PersistentCodeResult12.errmsg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.DIngDing.PersistentCodeResult12.deviceId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.DIngDing.PersistentCodeResult12.userid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuCreateViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuCreateViewModel.Name">
+            <summary>
+            菜单名称
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuCreateViewModel.Url">
+            <summary>
+            链接地址
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuCreateViewModel.Alias">
+            <summary>
+            页面别名
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuCreateViewModel.Icon">
+            <summary>
+            菜单图标(可选)
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuCreateViewModel.ParentGuid">
+            <summary>
+            父级GUID
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuCreateViewModel.ParentName">
+            <summary>
+            上级菜单名称
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuCreateViewModel.Level">
+            <summary>
+            菜单层级深度
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuCreateViewModel.Description">
+            <summary>
+            描述信息
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuCreateViewModel.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuCreateViewModel.Status">
+            <summary>
+            是否可用(0:禁用,1:可用)
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuCreateViewModel.IsDeleted">
+            <summary>
+            是否已删
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuCreateViewModel.IsDefaultRouter">
+            <summary>
+            是否为默认路由
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuCreateViewModel.Component">
+            <summary>
+            前端组件(.vue)
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuCreateViewModel.HideInMenu">
+            <summary>
+            在菜单中隐藏
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuCreateViewModel.NotCache">
+            <summary>
+            不缓存页面
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuCreateViewModel.BeforeCloseFun">
+            <summary>
+            页面关闭前的回调函数
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuEditViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuEditViewModel.SystemMenuUuid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuEditViewModel.Name">
+            <summary>
+            菜单名称
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuEditViewModel.Url">
+            <summary>
+            链接地址
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuEditViewModel.Alias">
+            <summary>
+            页面别名
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuEditViewModel.Icon">
+            <summary>
+            菜单图标(可选)
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuEditViewModel.ParentGuid">
+            <summary>
+            父级GUID
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuEditViewModel.ParentName">
+            <summary>
+            上级菜单名称
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuEditViewModel.Level">
+            <summary>
+            菜单层级深度
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuEditViewModel.Description">
+            <summary>
+            描述信息
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuEditViewModel.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuEditViewModel.Status">
+            <summary>
+            是否可用(0:禁用,1:可用)
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuEditViewModel.IsDeleted">
+            <summary>
+            是否已删
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuEditViewModel.IsDefaultRouter">
+            <summary>
+            是否为默认路由
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuEditViewModel.Component">
+            <summary>
+            前端组件(.vue)
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuEditViewModel.HideInMenu">
+            <summary>
+            在菜单中隐藏
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuEditViewModel.NotCache">
+            <summary>
+            不缓存页面
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuEditViewModel.BeforeCloseFun">
+            <summary>
+            页面关闭前的回调函数
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuJsonModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuTree">
+            <summary>
+            用于iview的菜单树
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuTree.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuTree.Guid">
+            <summary>
+            GUID
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuTree.ParentGuid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuTree.Title">
+            <summary>
+            标题(菜单名称)
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuTree.Expand">
+            <summary>
+            是否展开子节点
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuTree.Disabled">
+            <summary>
+            禁掉响应
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuTree.DisableCheckbox">
+            <summary>
+            禁掉 checkbox
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuTree.Selected">
+            <summary>
+            是否选中子节点	
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuTree.Checked">
+            <summary>
+            是否勾选(如果勾选，子节点也会全部勾选)
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuTree.Children">
+            <summary>
+            子节点属性数组
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionCreateViewModel">
+            <summary>
+            权限实体类
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionEditViewModel">
+            <summary>
+            权限实体类
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionEditViewModel.MenuName">
+            <summary>
+            菜单名称
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionJsonModel">
+            <summary>
+            权限实体类
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionJsonModel.MenuName">
+            <summary>
+            菜单名称
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionJsonModel.PermissionTypeText">
+            <summary>
+            权限类型的显示文本
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionMenuTree">
+            <summary>
+            用于角色权限的菜单树
+            </summary>
+        </member>
+        <member name="M:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionMenuTree.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionMenuTree.Guid">
+            <summary>
+            GUID
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionMenuTree.ParentGuid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionMenuTree.Title">
+            <summary>
+            标题(菜单名称)
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionMenuTree.Expand">
+            <summary>
+            是否展开子节点
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionMenuTree.Disabled">
+            <summary>
+            禁掉响应
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionMenuTree.DisableCheckbox">
+            <summary>
+            禁掉 checkbox
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionMenuTree.Selected">
+            <summary>
+            是否选中子节点	
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionMenuTree.Checked">
+            <summary>
+            是否勾选(如果勾选，子节点也会全部勾选)
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionMenuTree.AllAssigned">
+            <summary>
+            当前菜单的所有权限都已分配到指定角色
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionMenuTree.Permissions">
+            <summary>
+            当前菜单拥有的权限功能
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionMenuTree.Children">
+            <summary>
+            子节点属性数组
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionElement">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionElement.Code">
+            <summary>
+            权限编码
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionElement.Name">
+            <summary>
+            权限名称
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionElement.IsAssignedToRole">
+            <summary>
+            是否已分配到指定角色
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.ViewModels.Rbac.SystemRole.RoleCreateViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.ViewModels.Rbac.SystemRole.RoleJsonModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.ViewModels.Rbac.SystemUser.SaveUserRolesViewModel">
+            <summary>
+            用户获得的角色实体对象
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemUser.SaveUserRolesViewModel.UserGuid">
+            <summary>
+            用户GUID
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemUser.SaveUserRolesViewModel.AssignedRoles">
+            <summary>
+            已获得的角色代码集合
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.ViewModels.Rbac.SystemUser.UserCreateViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.ViewModels.Rbac.SystemUser.UserEditViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HaikanCRM.Api.ViewModels.Rbac.SystemUser.UserJsonModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemUser.UserPhoneInfoModel.phoneNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemUser.UserPhoneInfoModel.purePhoneNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemUser.UserPhoneInfoModel.countryCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemUser.UserPhoneInfoModel.watermark">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemUser.Watermark.timestamp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HaikanCRM.Api.ViewModels.Rbac.SystemUser.Watermark.appid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.MenuController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.MenuController.#ctor(HaikanCRM.Api.Entities.HaikanCRMContext,AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+            <param name="dbContext"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.MenuController.List(HaikanCRM.Api.RequestPayload.Rbac.Menu.MenuRequestPayload)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.MenuController.Create(HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuCreateViewModel)">
+            <summary>
+            创建菜单
+            </summary>
+            <param name="model">菜单视图实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.MenuController.Edit(System.Guid)">
+            <summary>
+            编辑菜单
+            </summary>
+            <param name="guid">菜单ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.MenuController.Edit(HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuEditViewModel)">
+            <summary>
+            保存编辑后的菜单信息
+            </summary>
+            <param name="model">菜单视图实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.MenuController.Tree(System.String)">
+            <summary>
+            菜单树
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.MenuController.Delete(System.String)">
+            <summary>
+            删除菜单
+            </summary>
+            <param name="ids">菜单ID,多个以逗号分隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.MenuController.Recover(System.String)">
+            <summary>
+            恢复菜单
+            </summary>
+            <param name="ids">菜单ID,多个以逗号分隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.MenuController.Batch(System.String,System.String)">
+            <summary>
+            批量操作
+            </summary>
+            <param name="command"></param>
+            <param name="ids">菜单ID,多个以逗号分隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.MenuController.UpdateIsDelete(HaikanCRM.Api.Entities.Enums.CommonEnum.IsDeleted,System.String)">
+            <summary>
+            删除菜单
+            </summary>
+            <param name="isDeleted"></param>
+            <param name="ids">菜单ID字符串,多个以逗号隔开</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.MenuController.UpdateStatus(System.String)">
+            <summary>
+            删除菜单
+            </summary>
+            <param name="status">菜单状态</param>
+            <param name="ids">菜单ID字符串,多个以逗号隔开</param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.MenuTreeHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.MenuTreeHelper.BuildTree(System.Collections.Generic.List{HaikanCRM.Api.ViewModels.Rbac.SystemMenu.MenuTree},System.String)">
+            <summary>
+            
+            </summary>
+            <param name="menus"></param>
+            <param name="selectedGuid"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.PermissionController">
+            <summary>
+            权限控制器
+            </summary>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.PermissionController.#ctor(HaikanCRM.Api.Entities.HaikanCRMContext,AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+            <param name="dbContext"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.PermissionController.List(HaikanCRM.Api.RequestPayload.Rbac.Permission.PermissionRequestPayload)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.PermissionController.Create(HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionCreateViewModel)">
+            <summary>
+            创建权限
+            </summary>
+            <param name="model">权限视图实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.PermissionController.Edit(System.Guid)">
+            <summary>
+            编辑权限
+            </summary>
+            <param name="code">权限惟一编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.PermissionController.Edit(HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionEditViewModel)">
+            <summary>
+            保存编辑后的权限信息
+            </summary>
+            <param name="model">权限视图实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.PermissionController.Delete(System.String)">
+            <summary>
+            删除权限
+            </summary>
+            <param name="ids">权限ID,多个以逗号分隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.PermissionController.Recover(System.String)">
+            <summary>
+            恢复权限
+            </summary>
+            <param name="ids">权限ID,多个以逗号分隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.PermissionController.Batch(System.String,System.String)">
+            <summary>
+            批量操作
+            </summary>
+            <param name="command"></param>
+            <param name="ids">权限ID,多个以逗号分隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.PermissionController.PermissionTree(System.String)">
+            <summary>
+            角色-权限菜单树
+            </summary>
+            <param name="code">角色编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.PermissionController.UpdateIsDelete(HaikanCRM.Api.Entities.Enums.CommonEnum.IsDeleted,System.String)">
+            <summary>
+            删除权限
+            </summary>
+            <param name="isDeleted"></param>
+            <param name="ids">权限ID字符串,多个以逗号隔开</param>
+            <returns></returns>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.PermissionController.UpdateStatus(System.String)">
+            <summary>
+            删除权限
+            </summary>
+            <param name="status">权限状态</param>
+            <param name="ids">权限ID字符串,多个以逗号隔开</param>
+            <returns></returns>
+        </member>
+        <member name="T:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.PermissionTreeHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HaikanEnrollmentRegistration.Api.Controllers.Api.V1.Rbac.PermissionTreeHelper.FillRecursive(System.Collections.Generic.List{HaikanCRM.Api.ViewModels.Rbac.SystemPermission.PermissionMenuTree},System.Collections.Generic.List{HaikanCRM.Api.Models.QueryModels.SystemPermissionWithAssignProperty},System.Nullable{System.Guid},System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="menus">菜单集合</param>
+            <param name="permissions">权限集合</param>
+            <param name="parentGuid">父级菜单GUID</param>
+            <param name="isSuperAdministrator">是否为超级管理员角色</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
